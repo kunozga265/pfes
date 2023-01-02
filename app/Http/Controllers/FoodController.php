@@ -31,6 +31,7 @@ class FoodController extends Controller
                 'source'            => $food["source"],
                 'unpeeled_weight'   => $food["unpeeled_weight"],
                 'group_id'          => $food["group_id"],
+                'image'             => "images/foods/".$food["image"].".jpg",
             ]);
         }
 

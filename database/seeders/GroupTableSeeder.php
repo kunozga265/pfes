@@ -32,5 +32,8 @@ class GroupTableSeeder extends Seeder
         Group::create([
             'name'  => 'Sugar Sweets and Beverages'
         ]);
+        Group::create([
+            'name'  => 'Biscuits, Cakes, Crackers and Energy Bars'
+        ]);
     }
 }

@@ -15,6 +15,7 @@ class Food extends Model
     }
 
     protected $fillable=[
+        "image",
         "item",
         "serving_size",
         "net_weight",
