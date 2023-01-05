@@ -15,19 +15,19 @@ class FoodResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'                => $this->id,
+            'id'                => intval($this->id),
             'image'             => $this->image,
             'item'              => $this->item,
             'serving_size'      => $this->serving_size,
-            'net_weight'        => $this->net_weight,
-            'energy'            => $this->energy,
-            'carbohydrate'      => $this->carbohydrate,
-            'fiber'             => $this->fiber,
-            'protein'           => $this->protein,
-            'fat'               => $this->fat,
+            'net_weight'        => floatval($this->net_weight),
+            'energy'            => floatval($this->energy),
+            'carbohydrate'      => floatval($this->carbohydrate),
+            'fiber'             => floatval($this->fiber),
+            'protein'           => floatval($this->protein),
+            'fat'               => floatval($this->fat),
             'more_info'         => $this->more_info,
             'source'            => $this->source,
-            'unpeeled_weight'   => $this->unpeeled_weight,
+            'unpeeled_weight'   => floatval($this->unpeeled_weight),
             'group'             => $this->group,
         ];
     }

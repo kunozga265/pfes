@@ -14,6 +14,10 @@ class Group extends Model
         return $this->hasMany(Food::class);
     }
 
+    protected $fillable=[
+        'name'
+    ];
+
     protected $hidden=[
         'created_at',
         'updated_at',

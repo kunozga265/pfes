@@ -29,4 +29,9 @@ class Food extends Model
         "unpeeled_weight",
         "group_id",
     ];
+
+    protected $hidden=[
+        'created_at',
+        'updated_at',
+    ];
 }

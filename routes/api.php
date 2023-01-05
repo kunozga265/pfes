@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\GroupController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post("seeder",[FoodController::class,'seeder']);
 Route::get("foods",[FoodController::class,'index']);
+
+Route::group(["prefix"=>'groups'],function (){
+    Route::get("/",[GroupController::class,'index']);
+    Route::get("/{id}",[GroupController::class,'show']);
+});
 
