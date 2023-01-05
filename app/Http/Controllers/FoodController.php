@@ -14,6 +14,15 @@ class FoodController extends Controller
         return response()->json(FoodResource::collection($foods));
     }
 
+    public function search($query)
+    {
+
+        $foods=Food::where('item', 'like', '%' .trim($query). '%')->orderBy('item','asc')->get();
+        return response()->json(FoodResource::collection($foods));
+
+
+    }
+
 
     public function seeder(Request $request)
     {

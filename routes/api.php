@@ -21,7 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post("seeder",[FoodController::class,'seeder']);
-Route::get("foods",[FoodController::class,'index']);
+
+Route::group(["prefix"=>'foods'],function () {
+    Route::get("/", [FoodController::class, 'index']);
+    Route::get("/search/{query}", [FoodController::class, 'search']);
+});
 
 Route::group(["prefix"=>'groups'],function (){
     Route::get("/",[GroupController::class,'index']);
