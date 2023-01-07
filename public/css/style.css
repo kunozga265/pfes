@@ -1,0 +1,41 @@
+.text-app-color{
+    color:#fd8d7d;
+}
+
+.bg-app-color{
+    background-color:#fd8d7d;
+}
+
+.bg-app-color-variant{
+    background-color:#f4c8c1;
+}
+
+.border-variant{
+    border:1px solid #f4c8c1;
+}
+
+.bg-system{
+    background-color: #fafafa;
+}
+
+.image-placeholder{
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center;
+}
+
+.max-w-24{
+    max-width: 96px;
+}
+
+.max-w-32{
+    max-width: 110px;
+}
+
+.mb-160{
+    margin-bottom:160px;
+}
+
+.group:hover, .food:hover{
+    cursor:pointer
+}
