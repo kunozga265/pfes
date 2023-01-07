@@ -3437,7 +3437,7 @@ __webpack_require__.r(__webpack_exports__);
       var foods = this.foods;
       if (this.selectedGroup !== 0) {
         foods = foods.filter(function (food) {
-          return food.group_id === _this.selectedGroup;
+          return food.group_id == _this.selectedGroup;
         });
       }
       if (this.search.length !== 0) {

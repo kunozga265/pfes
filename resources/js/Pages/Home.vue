@@ -68,7 +68,7 @@ export default {
 
             if(this.selectedGroup!==0){
                 foods = (foods).filter((food) => {
-                    return food.group_id === this.selectedGroup
+                    return food.group_id == this.selectedGroup
                 })
             }
 
