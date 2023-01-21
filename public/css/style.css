@@ -39,3 +39,10 @@
 .group:hover, .food:hover{
     cursor:pointer
 }
+
+.table_compare tr td{
+    padding:1rem
+}
+
+.st0{fill:#ED2643;}
+.st1{fill:#FFFFFF;}

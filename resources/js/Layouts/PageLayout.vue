@@ -25,19 +25,25 @@
             <portal-target name="modal" multiple>
             </portal-target>
         </div>
-        <nav class=" fixed bottom-8 flex justify-center w-full">
-            <div class="bg-white p-4 flex items-end shadow rounded-2xl">
+        <nav class=" fixed bottom-8 w-full">
+            <div class="mx-auto max-w-xl bg-white py-2 px-4  flex items-end justify-between shadow rounded-2xl">
                 <div class="p-2">
-                    <div><img class="mx-auto w-8" src="images/assets/carbCounting.svg" alt=""></div>
-                    <div class="text-sm text-gray-400 text-center">Carb Counting</div>
+                    <inertia-link :href="route('carb-info')">
+                        <div><img class="mx-auto w-10" src="images/assets/carbInfo.svg" alt=""></div>
+                        <div class="text-sm text-gray-400 text-center">Carb Info</div>
+                    </inertia-link>
                 </div>
                 <div class="p-2 mx-2 md:mx-4">
-                    <div><img class="mx-auto w-10" src="images/assets/carbInfo.svg" alt=""></div>
-                    <div class="text-sm text-gray-400 text-center">Carb Info</div>
+                    <inertia-link :href="route('carb-compare')">
+                        <div><img class="mx-auto w-10" src="images/assets/compare.svg" alt=""></div>
+                        <div class="text-sm text-gray-400 text-center">Compare</div>
+                    </inertia-link>
                 </div>
                 <div class="p-2">
-                    <div><img class="mx-auto w-10" src="images/assets/compare.svg" alt=""></div>
-                    <div class="text-sm text-gray-400 text-center">Compare</div>
+                    <inertia-link :href="route('carb-counting')">
+                        <div><img class="mx-auto w-8" src="images/assets/carbCounting.svg" alt=""></div>
+                        <div class="text-sm text-gray-400 text-center">Carb Counting</div>
+                    </inertia-link>
                 </div>
             </div>
         </nav>

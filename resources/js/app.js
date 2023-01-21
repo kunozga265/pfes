@@ -5,10 +5,18 @@ import Vue from 'vue';
 import { App as InertiaApp, plugin as InertiaPlugin } from '@inertiajs/inertia-vue';
 import PortalVue from 'portal-vue';
 import '@/Plugins/mixins'
+import PrimeVue from 'primevue/config';
+import {PrimeIcons} from "primevue/api";
+
 
 Vue.mixin({ methods: { route } });
 Vue.use(InertiaPlugin);
 Vue.use(PortalVue);
+Vue.use(PrimeVue);
+Vue.use(PrimeIcons)
+
+import AutoComplete from "primevue/autocomplete";
+Vue.component(AutoComplete)
 
 const app = document.getElementById('app');
 

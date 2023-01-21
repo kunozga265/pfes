@@ -1,8 +1,8 @@
 <template>
     <page-layout>
         <div class="relative">
-            <i class="text-gray-400 text-3xl p-4 mt-1 absolute mdi mdi-magnify"></i>
-            <input v-model="search" class="border-0 shadow rounded-2xl pl-16 py-6 w-full focus:ring-0 focus:shadow-lg transition duration-500 ease-in-out" type="text" placeholder="Search food">
+            <i class="text-gray-400 text-3xl px-4 py-2 sm:py-4 mt-1 absolute mdi mdi-magnify"></i>
+            <input v-model="search" class="border-0 shadow rounded-2xl pl-16 py-4 sm:py-6 w-full focus:ring-0 focus:shadow-lg transition duration-500 ease-in-out" type="text" placeholder="Search food">
         </div>
         <div class="my-4 p-2 flex overflow-x-scroll gap-4">
             <div
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
 
             <food
                 v-for="(food,index) in filteredFoods"
@@ -50,7 +50,7 @@ import Food from "@/Components/Food";
 import DialogModal from "@/Jetstream/DialogModal";
 
 export default {
-    name: "Home",
+    name: "CarbInfo",
     props:['groups','foods'],
     components:{
         PageLayout,

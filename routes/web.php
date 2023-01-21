@@ -16,7 +16,9 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', [PageController::class,'home']);
+Route::get('/', [PageController::class,'carbInfo'])->name('carb-info');
+Route::get('/carb-counting', [PageController::class,'carbCounting'])->name('carb-counting');
+Route::get('/carb-compare', [PageController::class,'carbCompare'])->name('carb-compare');
 
 Route::middleware([
     'auth:sanctum',

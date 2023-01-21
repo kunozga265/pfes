@@ -1,15 +1,15 @@
 <template>
     <div>
-        <div @click="showDialog=true" class="food h-full bg-white shadow rounded-xl hover:shadow-lg transition duration-500 ease-in-out">
+        <div @click="showDialog=true" class="food h-full bg-white shadow rounded-3xl hover:shadow-lg transition duration-500 ease-in-out">
             <div class="flex justify-end">
-                <div class="bg-app-color text-white p-2 rounded-tr-xl rounded-bl-xl">Carbs: {{ food.carbohydrate }}g</div>
+                <div class="bg-app-color text-white p-2 rounded-tr-3xl rounded-bl-3xl">Carbs: {{ food.carbohydrate }}g</div>
             </div>
             <div class="flex justify-center">
                 <div class="h-32 w-32 mt-2 image-placeholder"
                      :style="{ backgroundImage:`url(${food.image})` }"></div>
             </div>
             <div class="text-xl font-bold text-center mt-4">{{ food.item }}</div>
-            <div class="text-app-color text-center mb-2">{{ food.serving_size }}, {{ food.net_weight }}g</div>
+            <div class="text-app-color text-center mb-2"> {{title(food)}}, {{ food.net_weight }}g</div>
 
 
         </div>
@@ -20,7 +20,7 @@
                     {{food.item}}
                 </div>
                 <div class="text-xl text-center text-gray-600">
-                    {{food.serving_size}}, {{food.net_weight}}
+                    {{title(food)}}, {{food.net_weight}}
                 </div>
                 <div class="text-xl text-center text-gray-400">
                     {{food.more_info}}
@@ -143,6 +143,12 @@ export default {
     components:{
         DialogModal,
         SecondaryButton
+    },
+    computed:{
+
+    },
+    methods:{
+
     }
 }
 </script>
