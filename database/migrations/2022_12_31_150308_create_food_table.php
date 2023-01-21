@@ -18,6 +18,7 @@ class CreateFoodTable extends Migration
             $table->string('item');
             $table->string('image')->nullable();
             $table->string('serving_size')->nullable();
+            $table->string('serving_unit')->nullable();
             $table->double('net_weight')->nullable();
             $table->double('energy')->nullable();
             $table->double('carbohydrate')->nullable();

@@ -18,6 +18,7 @@ class Food extends Model
         "image",
         "item",
         "serving_size",
+        "serving_unit",
         "net_weight",
         "energy",
         "carbohydrate",
