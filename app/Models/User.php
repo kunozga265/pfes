@@ -18,6 +18,12 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+    public function logs()
+    {
+        return $this->hasMany(Log::class);
+    }
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -25,8 +31,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
+        'phone_number',
         'password',
+        'weight',
+        'height',
     ];
 
     /**
@@ -39,6 +47,13 @@ class User extends Authenticatable
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
+        "email_verified_at",
+        "two_factor_confirmed_at",
+        "current_team_id",
+        "profile_photo_path",
+        "created_at",
+        "updated_at",
+        "profile_photo_url",
     ];
 
     /**
