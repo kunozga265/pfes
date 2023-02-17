@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\GroupController;
+use App\Http\Controllers\LogController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+//Unauthenticated Routes
+Route::post("/users/login",[UserController::class,'login']);
+Route::post("/users/register",[UserController::class,'register']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -31,4 +37,11 @@ Route::group(["prefix"=>'groups'],function (){
     Route::get("/",[GroupController::class,'index']);
     Route::get("/{id}",[GroupController::class,'show']);
 });
+
+Route::group(["prefix"=>'logs','middleware'=>'auth:sanctum'],function (){
+    Route::get("/{uid}",[LogController::class,'index']);
+    Route::post("/{uid}",[LogController::class,'store']);
+});
+
+
 
