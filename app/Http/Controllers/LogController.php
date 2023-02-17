@@ -17,6 +17,9 @@ class LogController extends Controller
             ->orderBy('date','desc')
             ->get();
 
+        //force API return
+        return response()->json(LogResource::collection($logs));
+
         if ((new AppController())->isApi($request))
             return response()->json(LogResource::collection($logs));
         else
@@ -40,6 +43,9 @@ class LogController extends Controller
             'meal_id'   => $request->meal_id,
             'user_id'   => $uid,
         ]);
+
+        //force API return
+        return response()->json(new LogResource($log));
 
         if ((new AppController())->isApi($request))
             return response()->json(new LogResource($log));
