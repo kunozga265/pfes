@@ -3,6 +3,7 @@
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\MealController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 //Unauthenticated Routes
 Route::post("/users/login",[UserController::class,'login']);
 Route::post("/users/register",[UserController::class,'register']);
+Route::get("/meals",[MealController::class,'index']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -42,6 +45,8 @@ Route::group(["prefix"=>'logs','middleware'=>'auth:sanctum'],function (){
     Route::get("/{uid}",[LogController::class,'index']);
     Route::post("/{uid}",[LogController::class,'store']);
 });
+
+
 
 
 
