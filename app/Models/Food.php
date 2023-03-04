@@ -14,6 +14,11 @@ class Food extends Model
         return $this->belongsTo(Group::class);
     }
 
+    public function logs()
+    {
+        return $this->belongsToMany(Log::class,'logs_foods','food_id','log_id');
+    }
+
     protected $fillable=[
         "image",
         "item",

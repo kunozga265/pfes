@@ -30,10 +30,14 @@ class LogController extends Controller
     {
         $request->validate([
             "carbs"     => ['required'],
+            "foods"     => ['required'],
             "meal_id"   => ['required'],
+            "date"      => ['required'],
+            "quantity"  => ['required'],
         ]);
 
         $log=Log::create([
+            'quantity'  => $request->quantity,
             'carbs'     => $request->carbs,
             'protein'   => $request->protein,
             'fiber'     => $request->fiber,
@@ -43,6 +47,8 @@ class LogController extends Controller
             'meal_id'   => $request->meal_id,
             'user_id'   => $uid,
         ]);
+
+        $log->foods()->attach($request->foods);
 
         //force API return
         return response()->json(new LogResource($log));

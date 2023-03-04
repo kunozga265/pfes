@@ -21,8 +21,10 @@ class LogResource extends JsonResource
             'fiber'     => floatval($this->fiber),
             'fat'       => floatval($this->fat),
             'energy'    => floatval($this->energy),
-            'date'      => $this->date,
+            'date'      => floatval($this->date),
             'meal'      => $this->meal,
+            'foods'     => $this->foods,
+            'quantity'  => floatval($this->quantity),
         ];
     }
 }

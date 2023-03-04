@@ -19,6 +19,11 @@ class Log extends Model
         return $this->belongsTo(Meal::class);
     }
 
+    public function foods()
+    {
+        return $this->belongsToMany(Food::class,'logs_foods','log_id','food_id');
+    }
+
     protected $fillable=[
         'carbs',
         'protein',
@@ -28,5 +33,6 @@ class Log extends Model
         'meal_id',
         'user_id',
         'date',
+        'quantity',
     ];
 }

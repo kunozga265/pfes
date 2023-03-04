@@ -15,6 +15,7 @@ class CreateLogsTable extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
+            $table->double('quantity');
             $table->double('carbs');
             $table->double('protein')->nullable();
             $table->double('fiber')->nullable();
