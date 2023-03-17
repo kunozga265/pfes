@@ -16,14 +16,9 @@ class LogResource extends JsonResource
     {
         return [
             'id'        => floatval($this->id),
-            'carbs'     => floatval($this->carbs),
-            'protein'   => floatval($this->protein),
-            'fiber'     => floatval($this->fiber),
-            'fat'       => floatval($this->fat),
-            'energy'    => floatval($this->energy),
             'date'      => floatval($this->date),
             'meal'      => $this->meal,
-            'foods'     => $this->foods,
+            'food'      => $this->food,
             'quantity'  => floatval($this->quantity),
         ];
     }

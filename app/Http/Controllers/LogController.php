@@ -29,26 +29,21 @@ class LogController extends Controller
     public function store(Request $request,$uid)
     {
         $request->validate([
-            "carbs"     => ['required'],
-            "foods"     => ['required'],
+            "quantity"  => ['required'],
+            "food_id"   => ['required'],
             "meal_id"   => ['required'],
             "date"      => ['required'],
-            "quantity"  => ['required'],
         ]);
 
         $log=Log::create([
             'quantity'  => $request->quantity,
-            'carbs'     => $request->carbs,
-            'protein'   => $request->protein,
-            'fiber'     => $request->fiber,
-            'fat'       => $request->fat,
-            'energy'    => $request->energy,
-            'date'      => $request->date,
             'meal_id'   => $request->meal_id,
+            'food_id'   => $request->food_id,
             'user_id'   => $uid,
+            'date'      => $request->date,
         ]);
 
-        $log->foods()->attach($request->foods);
+        //$log->foods()->attach($request->foods);
 
         //force API return
         return response()->json(new LogResource($log));
