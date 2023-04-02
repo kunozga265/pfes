@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\LogResource;
 use App\Models\Log;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,7 +14,26 @@ class LogController extends Controller
     public function index(Request $request,$uid)
     {
         $user=User::FindorFail($uid);
+
+        $year = $request->query('y');
+        $month = $request->query('m');
+        $day = $request->query('d');
+
+        if($year && $month && $day){
+            $date=Carbon::create($year,$month,$day,0,0,0);
+        }
+        //default
+        else{
+            $date=Carbon::today();
+        }
+
+        //calculate limits
+        $startDate=$date->getTimestamp();
+        $endDate=$date->addHours(24)->getTimestamp();
+
         $logs=$user->logs()
+            ->where("date",">=",$startDate)
+            ->where("date","<",$endDate)
             ->orderBy('date','desc')
             ->get();
 
