@@ -61,6 +61,8 @@ class UserController extends Controller
             "password"      => bcrypt($request->password),
             'weight'        => $request->weight,
             'height'        => $request->height,
+            'age'           => $request->age,
+            'sex'           => $request->sex,
         ]);
 
         $token=$user->createToken($request->phone_number)->plainTextToken;
