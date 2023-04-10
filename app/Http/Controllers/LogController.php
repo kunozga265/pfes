@@ -75,4 +75,22 @@ class LogController extends Controller
 
     }
 
+    public function destroy($id)
+    {
+        $user = User::find(Auth::id());
+        $log = $user->logs()->where('id',$id)->first();
+        if(is_object($log)) {
+            $log->delete();
+            return response()->json([
+                "message"=>"Log removed"
+            ]);
+        }
+        else{
+            return response()->json([
+                "message"=>"Error. Log not found"
+            ], 404);
+        }
+
+    }
+
 }
