@@ -29,6 +29,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//User Routes
+Route::post('/users/update',[UserController::class,'update'])->middleware('auth:sanctum');
+
 Route::post("seeder",[FoodController::class,'seeder']);
 
 Route::group(["prefix"=>'foods'],function () {
@@ -44,6 +47,7 @@ Route::group(["prefix"=>'groups'],function (){
 Route::group(["prefix"=>'logs','middleware'=>'auth:sanctum'],function (){
     Route::get("/{uid}",[LogController::class,'index']);
     Route::post("/{uid}",[LogController::class,'store']);
+    Route::delete("/{id}/delete",[LogController::class,'destroy']);
 });
 
 

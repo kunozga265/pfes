@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
@@ -71,5 +72,26 @@ class UserController extends Controller
             'user'  =>  new UserResource($user),
             'token' =>  $token
         ]);
+    }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            "phone_number"  => ['required','string'],
+            'weight'        => ['required'],
+            'height'        => ['required'],
+        ]);
+
+        $user = User::find(Auth::id());
+        $user->update([
+            "name"          => ucwords($request->name),
+            "phone_number"  => $request->phone_number,
+            'weight'        => $request->weight,
+            'height'        => $request->height,
+            'age'           => $request->age,
+            'sex'           => $request->sex,
+        ]);
+
+        return response()->json(new UserResource($user));
     }
 }
