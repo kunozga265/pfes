@@ -18,7 +18,7 @@ class LogResource extends JsonResource
             'id'        => floatval($this->id),
             'date'      => floatval($this->date),
             'meal'      => $this->meal,
-            'food'      => $this->food,
+            'food'      => new FoodResource($this->food),
             'quantity'  => floatval($this->quantity),
         ];
     }
