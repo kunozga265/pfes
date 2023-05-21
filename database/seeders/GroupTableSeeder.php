@@ -35,12 +35,12 @@ class GroupTableSeeder extends Seeder
             'image' => 'images/groups/milk.png'
         ]);
         Group::create([
-            'name'  => 'Sugar Sweets and Beverages',
-            'image' => 'images/groups/sweets.png'
+            'name'  => 'Fats and oils',
+            'image' => 'images/groups/biscuits.png'
         ]);
         Group::create([
-            'name'  => 'Biscuits, Cakes, Crackers and Energy Bars',
-            'image' => 'images/groups/biscuits.png'
+            'name'  => 'Beverages, sugar, sweets and snacks',
+            'image' => 'images/groups/sweets.png'
         ]);
     }
 }
