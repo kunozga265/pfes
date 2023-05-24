@@ -20,17 +20,36 @@ class UserController extends Controller
      */
     public function login(Request $request)
     {
-        $request->validate([
-            "phone_number"  => ['required'],
-            "password"      => ['required'],
-        ]);
+//        $request->validate([
+//            "phone_number"  => ['required'],
+//            "password"      => ['required'],
+//        ]);
+
+        $error=false;
+        $message="";
+        if (!isset($request->phone_number)){
+            $error=true;
+            $message="Phone Number Required";
+        }else if (!isset($request->password)){
+            $error=true;
+            $message="Password Required";
+        }
+
+        if($error){
+            return response()->json([
+                'message' =>  $message
+            ],400);
+        }
 
         $user = User::where('phone_number', $request->phone_number)->first();
 
         if (! $user || ! Hash::check($request->password, $user->password)) {
-            throw ValidationException::withMessages([
+            /*throw ValidationException::withMessages([
                 'phone_number' => ['The provided credentials are incorrect.'],
-            ]);
+            ]);*/
+            return response()->json([
+                'message' =>  "Incorrect credentials provided"
+            ],400);
         }
         $token=$user->createToken($request->phone_number)->plainTextToken;
 
@@ -49,12 +68,40 @@ class UserController extends Controller
      */
     public function register(Request $request)
     {
-        $request->validate([
-            "phone_number"  => ['required','unique:users','string'],
-            "password"      => ['required', 'confirmed', new \Laravel\Fortify\Rules\Password, 'string'],
-            'weight'        => ['required'],
-            'height'        => ['required'],
-        ]);
+//        $request->validate([
+//            "phone_number"  => ['required','unique:users','string'],
+//            "password"      => ['required', 'confirmed', new \Laravel\Fortify\Rules\Password, 'string'],
+//            'weight'        => ['required'],
+//            'height'        => ['required'],
+//        ]);
+        $error=false;
+        $message="";
+        if (!isset($request->phone_number)){
+            $error=true;
+            $message="Phone Number Required";
+        }else if (User::where('phone_number',$request->phone_number)->exists()){
+            $error=true;
+            $message="Phone Number Already Registered";
+        }else if (!isset($request->password)){
+            $error=true;
+            $message="Password Required";
+        }else if (!isset($request->password_confirmation)){
+            $error=true;
+            $message="Password Confirmation Required";
+        }else if (!isset($request->weight)){
+            $error=true;
+            $message="Weight Required";
+        }else if (!isset($request->height)){
+            $error=true;
+            $message="Height Required";
+        }
+
+        if($error){
+            return response()->json([
+                'message' =>  $message
+            ],400);
+        }
+
 
         $user=User::create([
             "name"          => ucwords($request->name),
@@ -76,11 +123,30 @@ class UserController extends Controller
 
     public function update(Request $request)
     {
-        $request->validate([
-            "phone_number"  => ['required','string'],
-            'weight'        => ['required'],
-            'height'        => ['required'],
-        ]);
+//        $request->validate([
+//            "phone_number"  => ['required','string'],
+//            'weight'        => ['required'],
+//            'height'        => ['required'],
+//        ]);
+
+        $error=false;
+        $message="";
+        if (!isset($request->phone_number)){
+            $error=true;
+            $message="Phone Number Required";
+        }else if (!isset($request->weight)){
+            $error=true;
+            $message="Weight Required";
+        }else if (!isset($request->height)){
+            $error=true;
+            $message="Height Required";
+        }
+
+        if($error){
+            return response()->json([
+                'message' =>  $message
+            ],400);
+        }
 
         $user = User::find(Auth::id());
         $user->update([
