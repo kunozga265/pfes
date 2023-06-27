@@ -88,13 +88,13 @@ class UserController extends Controller
         }else if (!isset($request->password_confirmation)){
             $error=true;
             $message="Password Confirmation Required";
-        }else if (!isset($request->weight)){
+        }/*else if (!isset($request->weight)){
             $error=true;
             $message="Weight Required";
         }else if (!isset($request->height)){
             $error=true;
             $message="Height Required";
-        }
+        }*/
 
         if($error){
             return response()->json([
@@ -134,13 +134,13 @@ class UserController extends Controller
         if (!isset($request->phone_number)){
             $error=true;
             $message="Phone Number Required";
-        }else if (!isset($request->weight)){
+        }/*else if (!isset($request->weight)){
             $error=true;
             $message="Weight Required";
         }else if (!isset($request->height)){
             $error=true;
             $message="Height Required";
-        }
+        }*/
 
         if($error){
             return response()->json([

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->integer('age')->nullable();
             $table->string('sex')->nullable();
             $table->string('phone_number')->unique();
-            $table->string('weight');
-            $table->string('height');
+            $table->string('weight')->nullable();
+            $table->string('height')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
