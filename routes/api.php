@@ -4,6 +4,7 @@ use App\Http\Controllers\FoodController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\MealController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +49,13 @@ Route::group(["prefix"=>'logs','middleware'=>'auth:sanctum'],function (){
     Route::get("/{uid}",[LogController::class,'index']);
     Route::post("/{uid}",[LogController::class,'store']);
     Route::delete("/{id}/delete",[LogController::class,'destroy']);
+});
+
+
+Route::group(["prefix"=>'meal-plan','middleware'=>'auth:sanctum'],function (){
+    Route::get("/",[PlanController::class,'index']);
+    Route::post("/",[PlanController::class,'store']);
+    Route::delete("/{id}",[PlanController::class,'destroy']);
 });
 
 

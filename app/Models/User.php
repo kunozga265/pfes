@@ -23,6 +23,11 @@ class User extends Authenticatable
         return $this->hasMany(Log::class);
     }
 
+    public function plans()
+    {
+        return $this->hasMany(Plan::class);
+    }
+
 
     /**
      * The attributes that are mass assignable.

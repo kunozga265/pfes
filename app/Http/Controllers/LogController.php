@@ -13,7 +13,7 @@ class LogController extends Controller
 {
     public function index(Request $request,$uid)
     {
-        $user=User::FindorFail($uid);
+        $user=User::find(Auth::id());
 
         $year = $request->query('y');
         $month = $request->query('m');
@@ -59,7 +59,7 @@ class LogController extends Controller
             'quantity'  => $request->quantity,
             'meal_id'   => $request->meal_id,
             'food_id'   => $request->food_id,
-            'user_id'   => $uid,
+            'user_id'   => Auth::id(),
             'date'      => $request->date,
         ]);
 
