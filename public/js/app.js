@@ -9301,11 +9301,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_5__["default"].mixin({
-  methods: {
-    route: route
-  }
-});
+
+//Vue.mixin({ methods: { route } });
 vue__WEBPACK_IMPORTED_MODULE_5__["default"].use(_inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__.plugin);
 vue__WEBPACK_IMPORTED_MODULE_5__["default"].use(portal_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
 vue__WEBPACK_IMPORTED_MODULE_5__["default"].use(primevue_config__WEBPACK_IMPORTED_MODULE_3__["default"]);

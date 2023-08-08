@@ -28,6 +28,7 @@ class Food extends Model
         "energy",
         "carbohydrate",
         "fiber",
+//        "no_of_carbs_exchange",
         "protein",
         "fat",
         "more_info",

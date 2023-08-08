@@ -35,6 +35,7 @@ class FoodController extends Controller
                 'energy'            => $food["energy"],
                 'carbohydrate'      => $food["carbohydrate"],
                 'fiber'             => $food["fiber"],
+//                'no_of_carbs_exchange'             => $food["no_of_carbs_exchange"],
                 'protein'           => $food["protein"],
                 'fat'               => $food["fat"],
                 'more_info'         => ucfirst($food["more_info"]),

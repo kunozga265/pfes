@@ -31,7 +31,11 @@ class GroupTableSeeder extends Seeder
             'image' => 'images/groups/legumes.png'
         ]);
         Group::create([
-            'name'  => 'Meat, Milk and Milk Products',
+            'name'  => 'Meat, and Meat Products',
+            'image' => 'images/groups/milk.png'
+        ]);
+        Group::create([
+            'name'  => 'Milk and Milk Products',
             'image' => 'images/groups/milk.png'
         ]);
         Group::create([

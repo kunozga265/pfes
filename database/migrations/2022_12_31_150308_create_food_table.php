@@ -23,6 +23,7 @@ class CreateFoodTable extends Migration
             $table->double('energy')->nullable();
             $table->double('carbohydrate')->nullable();
             $table->double('fiber')->nullable();
+//            $table->double('no_of_carbs_exchange')->nullable();
             $table->double('protein')->nullable();
             $table->double('fat')->nullable();
             $table->string('unpeeled_weight')->nullable();
