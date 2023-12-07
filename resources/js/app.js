@@ -9,7 +9,7 @@ import PrimeVue from 'primevue/config';
 import {PrimeIcons} from "primevue/api";
 
 
-//Vue.mixin({ methods: { route } });
+Vue.mixin({ methods: { route } });
 Vue.use(InertiaPlugin);
 Vue.use(PortalVue);
 Vue.use(PrimeVue);

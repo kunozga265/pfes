@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\FoodResource;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\ValidationException;
+use Inertia\Inertia;
 
 class UserController extends Controller
 {
@@ -159,5 +162,19 @@ class UserController extends Controller
         ]);
 
         return response()->json(new UserResource($user));
+    }
+
+    public function delete()
+    {
+        return Inertia::render("Profile/DeleteData");
+    }
+
+    public function destroy(Request $request)
+    {
+        $request->validate([
+           'phoneNumber' => 'required'
+        ]);
+
+        return Redirect::route("carb-info");
     }
 }
