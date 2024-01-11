@@ -22,7 +22,7 @@
                     </div>
                     <div class="header__nav">
                         <ul class="header__nav-primary">
-                           
+
                             <li><a href="#home">Home</a></li>
                             <li><a href="#video">Video</a></li>
                             <li><a href="#feature">Features</a></li>
@@ -49,7 +49,7 @@
                             <h1 class="main-heading color-black">Why Count Carbohydrates?</h1>
                             <p class="paragraph">Learn the importance of counting carbohydrates in managing diabetes and maintaining blood glucose levels. Explore how healthy eating from various food groups plays a crucial role in diabetes self-care.</p>
                             <p class="paragraph">
-                                Discover the meal planning method of carbohydrate counting and how it helps gauge the amount of carbohydrates in each meal or snack. 
+                                Discover the meal planning method of carbohydrate counting and how it helps gauge the amount of carbohydrates in each meal or snack.
                             </p>
                             <div class="download-buttons">
                                 <a href="https://play.google.com/store/apps/details?id=com.luanar.carb_exchange&hl=en&gl=US" class="google-play">
@@ -160,7 +160,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="ytdefer yt-video" style="width: 100%; height: 100%;" data-src="L0SgnPNA5Yw"></div>
+                                        <div class="ytdefer yt-video" style="width: 100%; height: 100%;" data-src="4cZ8eJFwCN4"></div>
                                     </div>
                                 </div>
                             </div>
@@ -322,7 +322,7 @@
         </section>
         <!--step section end-->
 
-        
+
 
     </page-layout>
 
