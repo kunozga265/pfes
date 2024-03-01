@@ -48,4 +48,11 @@ class PageController extends Controller
             'foods'     => FoodResource::collection($foods)
         ]);
     }
+
+    public function support()
+    {
+        return Inertia::render("Support",[
+
+        ]);
+    }
 }

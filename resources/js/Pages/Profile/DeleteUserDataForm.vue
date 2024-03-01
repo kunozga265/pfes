@@ -1,19 +1,23 @@
 <template>
     <jet-action-section>
-        <template #title>
-            Delete Account
-        </template>
 
-        <template #description>
-            Permanently delete your account.
-        </template>
 
         <template #content>
-            <div class="max-w-xl text-sm text-gray-600">
+            <p class="paragraph">
                 Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.
-            </div>
+            </p>
 
             <div class="mt-5">
+
+                <div class="mt-4">
+                    <jet-input type="text" class="" placeholder="Phone Number"
+                               ref="phoneNumber"
+                               v-model="form.phoneNumber"
+                               @keyup.enter.native="deleteUser" />
+
+                    <jet-input-error :message="form.errors.phoneNumber" class="mt-2" />
+                </div>
+
                 <jet-danger-button @click.native="confirmUserDeletion">
                     Delete Account
                 </jet-danger-button>
@@ -84,14 +88,14 @@
             confirmUserDeletion() {
                 this.confirmingUserDeletion = true;
 
-                setTimeout(() => this.$refs.phoneNumber.focus(), 250)
+                // setTimeout(() => this.$refs.phoneNumber.focus(), 250)
             },
 
             deleteUser() {
                 this.form.delete(route('user.destroy'), {
                     preserveScroll: true,
                     onSuccess: () => this.closeModal(),
-                    onError: () => this.$refs.phoneNumber.focus(),
+                    // onError: () => this.$refs.phoneNumber.focus(),
                     onFinish: () => this.form.reset(),
                 })
             },

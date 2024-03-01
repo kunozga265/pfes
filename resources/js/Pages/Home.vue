@@ -1,43 +1,22 @@
 <template>
     <page-layout>
-        <!--header section start-->
-        <header class="header header-1">
-            <div class="container">
-                <div class="header__wrapper flex items-center">
-                    <div class="header__logo">
 
-                        <a href="index-2.html">
-                            <div class="flex items-center">
-                                <div>
-                                    <img class="h-auto w-16 shadow-lg" :src="fileUrl('images/assets/luanar_logo.png')" alt="">
-                                </div>
-                                <div class="ml-4">
-                                    <div class="text-4xl font-semibold text-black">Carbs</div>
-                                    <div class="text-4xl font-semibold text-app-color">Exchange</div>
-                                </div>
-                            </div>
+        <template #navlinks>
+            <div class="header__nav">
+                <ul class="header__nav-primary">
 
-<!--                            <img src="assets/images/footer-logo.png" alt="logo">-->
-                        </a>
-                    </div>
-                    <div class="header__nav">
-                        <ul class="header__nav-primary">
-
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#video">Video</a></li>
-                            <li><a href="#feature">Features</a></li>
-                            <li><a href="#preview">Preview</a></li>
-                        </ul>
-                        <span><i class="fas fa-times"></i></span>
-                    </div>
-                    <div class="header__bars">
-                        <div class="header__bars-bar header__bars-bar-1"></div>
-                        <div class="header__bars-bar header__bars-bar-2"></div>
-                        <div class="header__bars-bar header__bars-bar-3"></div>
-                    </div>
-                </div>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#video">Video</a></li>
+                    <li><a href="#feature">Features</a></li>
+                    <li><a href="#preview">Preview</a></li>
+                    <li><a :href="route('support')">Support</a></li>
+                </ul>
+                <span><i class="fas fa-times"></i></span>
             </div>
-        </header>
+
+        </template>
+        <!--header section start-->
+
         <!--header section end-->
 
         <!--hero section start-->

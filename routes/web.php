@@ -18,9 +18,10 @@ use Inertia\Inertia;
 */
 
 Route::get('/', [PageController::class,'home'])->name('home');
-Route::get('/carb-info', [PageController::class,'carbInfo'])->name('carb-info');
-Route::get('/carb-counting', [PageController::class,'carbCounting'])->name('carb-counting');
-Route::get('/carb-compare', [PageController::class,'carbCompare'])->name('carb-compare');
+//Route::get('/carb-info', [PageController::class,'carbInfo'])->name('carb-info');
+//Route::get('/carb-counting', [PageController::class,'carbCounting'])->name('carb-counting');
+//Route::get('/carb-compare', [PageController::class,'carbCompare'])->name('carb-compare');
+Route::get('/support', [PageController::class,'support'])->name('support');
 Route::get('/users/delete-data', [UserController::class,'delete'])->name('delete-data');
 Route::delete('/users/destroy', [UserController::class,'destroy'])->name('user.destroy');
 

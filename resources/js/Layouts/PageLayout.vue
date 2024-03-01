@@ -18,6 +18,37 @@
 <!--            </nav>-->
 
             <main class="">
+                <header class="header header-1">
+                    <div class="container">
+                        <div class="header__wrapper flex items-center">
+                            <div class="header__logo">
+
+                                <a :href="route('home')">
+                                    <div class="flex items-center">
+                                        <div>
+                                            <img class="h-auto w-16 shadow-lg" :src="fileUrl('images/assets/luanar_logo.png')" alt="">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-4xl font-semibold text-black">Carbs</div>
+                                            <div class="text-4xl font-semibold text-app-color">Exchange</div>
+                                        </div>
+                                    </div>
+
+                                    <!--                            <img src="assets/images/footer-logo.png" alt="logo">-->
+                                </a>
+                            </div>
+                            <div class="">
+                                <slot name="navlinks"></slot>
+                            </div>
+                            <div class="header__bars">
+                                <div class="header__bars-bar header__bars-bar-1"></div>
+                                <div class="header__bars-bar header__bars-bar-2"></div>
+                                <div class="header__bars-bar header__bars-bar-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
                 <slot></slot>
             </main>
 
